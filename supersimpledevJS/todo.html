@@ -37,7 +37,7 @@
       }
 
       // Creates a todo
-      function createTodo(title, dueDate) {
+      const createTodo = (title, dueDate) => {
         const id = '' + new Date().getTime();
 
         todos.push({
@@ -50,8 +50,8 @@
       }
 
       // Deletes a todo
-      function removeTodo(idToDelete) {
-        todos = todos.filter(function (todo) {
+      const removeTodo = idToDelete => {
+        todos = todos.filter(todo => {
           // If the id of this todo matches idToDelete, return false
           // For everything else, return true
           if (todo.id === idToDelete) {
@@ -64,12 +64,12 @@
         saveTodos();
       }
 
-      function saveTodos() {
+      const saveTodos = () => {
         localStorage.setItem('todos', JSON.stringify(todos));
       }
 
       // Controller
-      function addTodo() {
+      const addTodo = () => {
         const textbox = document.getElementById('todo-title');
         const title = textbox.value;
 
@@ -80,7 +80,7 @@
         render();
       }
 
-      function deleteTodo(event) {
+      const deleteTodo = event => {
         const deleteButton = event.target;
         const idToDelete = deleteButton.id;
 
@@ -89,11 +89,11 @@
       }
 
       // View
-      function render() {
+      const render = () => {
         // reset our list
         document.getElementById('todo-list').innerHTML = '';
 
-        todos.forEach(function (todo) {
+        todos.forEach(todo => {
           const element = document.createElement('div');
           element.innerText = todo.title + ' ' + todo.dueDate;
 
