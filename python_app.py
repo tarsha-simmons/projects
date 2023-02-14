@@ -1,3 +1,4 @@
+#replace word in terminal
 def replace_word():
 
   str = "Hi everyone, I am Tasha and hello hi hi"
