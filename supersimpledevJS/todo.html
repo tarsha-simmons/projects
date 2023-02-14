@@ -5,22 +5,21 @@
   <body>
    <button>Press me</button>
    <div>Pick up Kids</div>
-   <div>Groom Dog</div>
+   <div>Groom Dogs</div>
    <div>Order Groceries</div>
   <script>
     let todo1 = 'Pick up Kids';
-    let todo2 = 'Groom Dog';
+    let todo2 = 'Groom Dogs';
     let todo3 = 'Order Groceries';
+  
+    let todos = ['Pick up Kids', 'Groom Dogs', 'Order Groceries'];
+    todos.push('another todo');
 
-    function addTodo(todoTitle) {
+    todos.forEeach (function addTodo(todoTitle) {
     let element = document.createElement('div');
     element.innerText = todoTitle;
     document.body.appendChild(element);
-    }
-    addTodo(todo1);
-    addTodo(todo2);
-    addTodo(todo3);
-   
+    });
   </script>
   </body>
 </html>
