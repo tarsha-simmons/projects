@@ -3,23 +3,23 @@
     <title>My Todo App</title>
   </head>
   <body>
-   <button>Press me</button>
-   <div>Pick up Kids</div>
-   <div>Groom Dogs</div>
-   <div>Order Groceries</div>
+  <input id="todo-title" type=""text />   
+  <button onclick=""addTodo()">Add Todo</button>
   <script>
-    let todo1 = 'Pick up Kids';
-    let todo2 = 'Groom Dogs';
-    let todo3 = 'Order Groceries';
   
     let todos = ['Pick up Kids', 'Groom Dogs', 'Order Groceries'];
-    todos.push('another todo');
 
     todos.forEeach (function addTodo(todoTitle) {
     let element = document.createElement('div');
     element.innerText = todoTitle;
     document.body.appendChild(element);
     });
+
+    function addTodo() {
+      let textbox = document.getElementById('todo-title');
+      let title = textbox.value;
+      todos.push(title);
+    }
   </script>
   </body>
 </html>
