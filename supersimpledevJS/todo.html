@@ -12,16 +12,15 @@
     let todo2 = 'Groom Dog';
     let todo3 = 'Order Groceries';
 
+    function addTodo(todoTitle) {
     let element = document.createElement('div');
-    element.innerText = todo1;
+    element.innerText = todoTitle;
     document.body.appendChild(element);
-
-    let element = document.createElement('div');
-    element.innerText = todo2;
-    document.body.appendChild(element);
-    let element = document.createElement('div');
-    element.innerText = todo3;
-    document.body.appendChild(element);
+    }
+    addTodo(todo1);
+    addTodo(todo2);
+    addTodo(todo3);
+   
   </script>
   </body>
 </html>
