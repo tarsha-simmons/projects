@@ -3,23 +3,51 @@
     <title>My Todo App</title>
   </head>
   <body>
-  <input id="todo-title" type=""text />   
-  <button onclick=""addTodo()">Add Todo</button>
-  <script>
-  
-    let todos = ['Pick up Kids', 'Groom Dogs', 'Order Groceries'];
+    <input id="todo-title" type="text" />
+    <input id="date-picker" type="date" />
+    <button onclick="addTodo()">Add Todo</button>
 
-    todos.forEeach (function addTodo(todoTitle) {
-    let element = document.createElement('div');
-    element.innerText = todoTitle;
-    document.body.appendChild(element);
-    });
+    <div id="todo-list"></div>
 
-    function addTodo() {
-      let textbox = document.getElementById('todo-title');
-      let title = textbox.value;
-      todos.push(title);
-    }
-  </script>
+    <script>
+      const todos = [{
+        title: 'Get groceries',
+        dueDate: '2021-10-04'
+      }, {
+        title: 'Wash car',
+        dueDate: '2021-02-03'
+      }, {
+        title: 'Make dinner',
+        dueDate: '2021-03-04'
+      }];
+
+      render();
+
+      function addTodo() {
+        const textbox = document.getElementById('todo-title');
+        const title = textbox.value;
+
+        const datePicker = document.getElementById('date-picker');
+        const dueDate = datePicker.value;
+        todos.push({
+          title: title,
+          dueDate: dueDate
+        });
+
+        render();
+      }
+
+      function render() {
+        // reset our list
+        document.getElementById('todo-list').innerHTML = '';
+
+        todos.forEach(function (todo) {
+          const element = document.createElement('div');
+          element.innerText = todo.title + ' ' + todo.dueDate;
+          const todoList = document.getElementById('todo-list');
+          todoList.appendChild(element);
+        });
+      }
+    </script>
   </body>
 </html>
